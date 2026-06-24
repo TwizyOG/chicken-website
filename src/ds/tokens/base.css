@@ -1,0 +1,67 @@
+/* ==========================================================================
+   RV X — Base element styles (opt-in foundation)
+   Kept minimal so it composes with consumer layouts.
+   ========================================================================== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg-base);
+  color: var(--text-hi);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+  font-weight: var(--fw-regular);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--text-onaccent);
+}
+
+a { color: var(--text-link); text-decoration: none; }
+a:hover { color: var(--accent-hover); }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  margin: 0;
+}
+
+/* Utility: condensed all-caps eyebrow / signage label */
+.rvx-eyebrow {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  color: var(--accent-text);
+  font-size: var(--fs-sm);
+}
+
+/* Utility: mono metadata */
+.rvx-meta {
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-low);
+  font-size: var(--fs-xs);
+}
+
+/* Warm scrollbar */
+* {
+  scrollbar-color: var(--asphalt-700) transparent;
+}
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-thumb {
+  background: var(--asphalt-700);
+  border-radius: var(--radius-pill);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--asphalt-600); }

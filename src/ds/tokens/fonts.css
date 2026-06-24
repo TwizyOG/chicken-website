@@ -1,0 +1,11 @@
+/* ==========================================================================
+   RV X — Webfonts
+   Broadcast / sporty condensed display + clean companion body + highway mono.
+   These are the brand's chosen fonts (loaded from Google Fonts CDN).
+   --------------------------------------------------------------------------
+   Anton           — hero / huge broadcast display (single weight)
+   Barlow Condensed— headings, stat labels, signage (sporty, loud)
+   Barlow          — body copy (the non-condensed companion to keep it cohesive)
+   Space Mono      — timestamps, mile-markers, coordinates, metadata
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');

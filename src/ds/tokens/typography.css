@@ -1,0 +1,78 @@
+/* ==========================================================================
+   RV X — Typography tokens
+   Broadcast condensed display, clean Barlow body, Space Mono metadata.
+   ========================================================================== */
+:root {
+  /* ---- Families -------------------------------------------------------- */
+  --font-display: 'Anton', 'Barlow Condensed', system-ui, sans-serif;
+  --font-heading: 'Barlow Condensed', 'Oswald', system-ui, sans-serif;
+  --font-body:    'Barlow', system-ui, -apple-system, sans-serif;
+  --font-mono:    'Space Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* ---- Weights ----------------------------------- @kind font ---------- */
+  --fw-regular:  400;  /* @kind font */
+  --fw-medium:   500;  /* @kind font */
+  --fw-semibold: 600;  /* @kind font */
+  --fw-bold:     700;  /* @kind font */
+  --fw-black:    800;  /* @kind font */
+
+  /* ---- Type scale (px) ------------------------------------------------- */
+  --fs-3xs:   11px;
+  --fs-2xs:   12px;
+  --fs-xs:    13px;
+  --fs-sm:    14px;
+  --fs-base:  16px;
+  --fs-md:    18px;
+  --fs-lg:    21px;
+  --fs-xl:    26px;
+  --fs-2xl:   32px;
+  --fs-3xl:   42px;
+  --fs-4xl:   56px;
+  --fs-5xl:   76px;
+  --fs-6xl:   104px;
+
+  /* Fluid hero display (broadcast headline) */
+  --fs-hero:  clamp(56px, 9vw, 132px);  /* @kind font */
+
+  /* ---- Line heights ------------------------------ @kind font ---------- */
+  --lh-none:   1;     /* @kind font */
+  --lh-tight:  1.04;  /* @kind font */
+  --lh-snug:   1.16;  /* @kind font */
+  --lh-normal: 1.45;  /* @kind font */
+  --lh-relaxed:1.62;  /* @kind font */
+
+  /* ---- Letter spacing ---------------------------- @kind font ---------- */
+  --tracking-tighter: -0.02em;  /* @kind font */
+  --tracking-tight:   -0.01em;  /* @kind font */
+  --tracking-normal:  0;        /* @kind font */
+  --tracking-wide:    0.04em;   /* @kind font */
+  --tracking-wider:   0.08em;   /* @kind font */
+  --tracking-caps:    0.14em;   /* @kind font */
+
+  /* ---- Semantic roles -------------------------------------------------- */
+  /* Hero (Anton) */
+  --type-hero-font:    var(--font-display);
+  --type-hero-weight:  var(--fw-regular);
+  --type-hero-tracking:var(--tracking-tight);  /* @kind font */
+  --type-hero-lh:      var(--lh-none);          /* @kind font */
+
+  /* Section / card titles (Barlow Condensed) */
+  --type-title-font:   var(--font-heading);
+  --type-title-weight: var(--fw-bold);
+  --type-title-lh:     var(--lh-tight);  /* @kind font */
+
+  /* Eyebrow / label (condensed, all-caps, tracked) */
+  --type-eyebrow-font:    var(--font-heading);
+  --type-eyebrow-weight:  var(--fw-semibold);
+  --type-eyebrow-tracking:var(--tracking-caps);  /* @kind font */
+
+  /* Body (Barlow) */
+  --type-body-font:   var(--font-body);
+  --type-body-weight: var(--fw-regular);
+  --type-body-lh:     var(--lh-relaxed);  /* @kind font */
+
+  /* Metadata / mono (Space Mono) */
+  --type-meta-font:    var(--font-mono);
+  --type-meta-weight:  var(--fw-regular);
+  --type-meta-tracking:var(--tracking-wide);  /* @kind font */
+}

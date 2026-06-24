@@ -1,0 +1,53 @@
+name: Security
+
+# Continuous security gates for a static site: secret scanning (Gitleaks),
+# static analysis / SAST (Semgrep), and dependency CVEs (OSV-Scanner).
+# Runs independently of the Pages deploy, so a finding shows as a failed check
+# without blocking the site. To make deploy depend on this, add `needs: [...]`
+# in deploy.yml. Action versions are pinned — bump them as new releases land.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gitleaks:
+    name: Secret scan (Gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so Gitleaks can scan every commit
+      - uses: gitleaks/gitleaks-action@v2
+        # Free for public + personal repos. Org-owned private repos need
+        # a GITLEAKS_LICENSE secret.
+
+  semgrep:
+    name: SAST (Semgrep)
+    runs-on: ubuntu-latest
+    container:
+      image: semgrep/semgrep
+    steps:
+      - uses: actions/checkout@v4
+      - run: >
+          semgrep scan
+          --config p/javascript
+          --config p/react
+          --config p/secrets
+          --error
+        # --error makes the job fail (gate) when a rule matches.
+
+  osv-scanner:
+    name: Dependency CVEs (OSV-Scanner)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: google/osv-scanner-action/osv-scanner-action@v1.9.2
+        with:
+          scan-args: |-
+            --lockfile=package-lock.json

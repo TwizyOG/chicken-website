@@ -1,0 +1,100 @@
+/* ==========================================================================
+   RV X — Color tokens
+   Gritty Americana road-trip: warm dusty asphalt darks, sun-baked sand,
+   sunset-amber accent, rust/clay secondary, plus signal colors.
+   Built in oklch for harmonious warm hues.
+   ========================================================================== */
+:root {
+  /* ---- Asphalt: warm dark neutrals (the road) -------------------------- */
+  --asphalt-1000: oklch(0.135 0.012 58);
+  --asphalt-950:  oklch(0.165 0.014 58);
+  --asphalt-900:  oklch(0.195 0.016 60);
+  --asphalt-850:  oklch(0.225 0.018 61);
+  --asphalt-800:  oklch(0.265 0.020 62);
+  --asphalt-700:  oklch(0.330 0.020 64);
+  --asphalt-600:  oklch(0.410 0.018 66);
+  --asphalt-500:  oklch(0.510 0.016 68);
+
+  /* ---- Sand / dust: warm light surfaces + text ------------------------- */
+  --sand-50:  oklch(0.970 0.012 85);
+  --sand-100: oklch(0.930 0.018 82);
+  --sand-200: oklch(0.860 0.022 80);
+  --sand-300: oklch(0.760 0.026 75);
+  --sand-400: oklch(0.640 0.026 71);
+
+  /* ---- Sunset amber: PRIMARY accent ------------------------------------ */
+  --amber-300: oklch(0.840 0.130 72);
+  --amber-400: oklch(0.785 0.155 62);
+  --amber-500: oklch(0.720 0.172 55);
+  --amber-600: oklch(0.635 0.165 50);
+  --amber-700: oklch(0.545 0.150 47);
+
+  /* ---- Rust / clay: secondary warm ------------------------------------- */
+  --rust-400: oklch(0.620 0.150 40);
+  --rust-500: oklch(0.535 0.150 36);
+  --rust-600: oklch(0.455 0.140 34);
+
+  /* ---- Signal / brand colors ------------------------------------------- */
+  --live-500:    oklch(0.620 0.230 25);   /* hot LIVE red             */
+  --kick-500:    oklch(0.840 0.230 142);  /* Kick green               */
+  --kick-600:    oklch(0.760 0.215 142);
+  --route-500:   oklch(0.660 0.130 232);  /* route-sign blue          */
+  --magenta-500: oklch(0.640 0.215 350);  /* powerchat / donate pink  */
+  --magenta-600: oklch(0.565 0.205 352);
+  --success-500: oklch(0.760 0.155 150);
+  --warn-500:    oklch(0.800 0.150 80);
+
+  /* ======================================================================
+     SEMANTIC ALIASES — use these in components, not the raw scale above.
+     ====================================================================== */
+
+  /* Backgrounds & surfaces */
+  --bg-base:       var(--asphalt-1000);
+  --bg-canvas:     var(--asphalt-950);
+  --surface-1:     var(--asphalt-900);
+  --surface-2:     var(--asphalt-850);
+  --surface-3:     var(--asphalt-800);
+  --surface-raised:var(--asphalt-850);
+  --surface-sunken:var(--asphalt-1000);
+  --surface-inset: oklch(0.135 0.012 58 / 0.55);
+
+  /* Borders & dividers */
+  --border-subtle:  var(--asphalt-800);
+  --border-default: var(--asphalt-700);
+  --border-strong:  var(--asphalt-600);
+  --border-accent:  var(--amber-500);
+
+  /* Text */
+  --text-hi:       var(--sand-50);
+  --text-mid:      var(--sand-300);
+  --text-low:      var(--sand-400);
+  --text-faint:    var(--asphalt-500);
+  --text-onaccent: var(--asphalt-1000);
+  --text-onlive:   var(--sand-50);
+  --text-link:     var(--amber-400);
+
+  /* Accent (primary = sunset amber; overridable for "explore a few") */
+  --accent:        var(--amber-500);
+  --accent-hover:  var(--amber-400);
+  --accent-press:  var(--amber-600);
+  --accent-text:   var(--amber-400);
+  --accent-soft:   oklch(0.720 0.172 55 / 0.14);
+  --accent-ring:   oklch(0.720 0.172 55 / 0.45);
+
+  /* Route line (map) */
+  --route-line:      var(--amber-500);
+  --route-line-done: var(--amber-700);
+  --route-glow:      oklch(0.720 0.172 55 / 0.55);
+
+  /* Functional / brand */
+  --live:        var(--live-500);
+  --kick:        var(--kick-500);
+  --kick-ink:    oklch(0.165 0.014 58);
+  --donate:      var(--magenta-500);
+  --donate-hover:var(--magenta-600);
+  --positive:    var(--success-500);
+  --warning:     var(--warn-500);
+
+  /* Focus */
+  --focus-ring:  var(--amber-400);
+}
